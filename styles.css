@@ -255,13 +255,13 @@ ul { margin: 0; padding: 0; }
 }
 .choices.locked .choice { cursor: default; opacity: 0.45; }
 .choices.locked .choice.right,
-.choices.locked .choice.model,
+.choices.locked .choice.is-model,
 .choices.locked .choice.wrong,
 .choices.locked .choice.chosen { opacity: 1; }
 .choice.right { border-color: var(--clear); box-shadow: inset 3px 0 0 var(--clear); }
-.choice.model { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.choice.is-model { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
 .choice.wrong { border-color: var(--miss); box-shadow: inset 3px 0 0 var(--miss); }
-.choice.chosen:not(.right):not(.wrong):not(.model) { border-color: var(--ink-3); }
+.choice.chosen:not(.right):not(.wrong):not(.is-model) { border-color: var(--ink-3); }
 
 /* ---------------------------------------------------------------- feedback */
 .feedback { margin-top: 1.5rem; }

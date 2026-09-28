@@ -42,6 +42,10 @@
         });
       });
 
+      // A pair can be threaded from both directions; discovery counts the pair once.
+      Content.threadPairs = Content.threads.map(function (t) { return [t.from, t.to].sort().join("|"); })
+        .filter(function (k, i, all) { return all.indexOf(k) === i; });
+
       // Undirected concept graph for the Map.
       var seen = {};
       Content.edges = [];
@@ -235,9 +239,9 @@
         var cs = state.concepts[c.id];
         if (cs) sum += Math.min(5, cs.mastery);
       });
-      var conn = Content.threads.length
-        ? Math.min(1, state.connectionsDiscovered.length / Content.threads.length)
-        : 0;
+      var pairs = Content.threadPairs;
+      var found = state.connectionsDiscovered.filter(function (k) { return pairs.indexOf(k) !== -1; }).length;
+      var conn = pairs.length ? found / pairs.length : 0;
       return Math.round(100 * (0.85 * (sum / total) + 0.15 * conn));
     }
   };

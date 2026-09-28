@@ -154,7 +154,6 @@ window.WN_INTERACTIONS = {
     concept_integration: {
       recognize: {
         format: "choice",
-        stem: "What changed?",
         options: ["Integration", "Ownership", "Institutional power"],
         correct: 0
       },
@@ -421,7 +420,6 @@ window.WN_INTERACTIONS = {
     },
     assimilation_s2: {
       mode: "single",
-      stem: "",
       options: [
         { id: "yes", label: "Yes" },
         { id: "no_assim", label: "No" },

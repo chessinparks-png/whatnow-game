@@ -141,7 +141,6 @@
     var root = ctx.root;
     var feedback = h("div", { class: "feedback", "aria-live": "polite" });
 
-    if (enc.isNew) root.appendChild(UI.kicker("New idea"));
     root.appendChild(UI.prompt(L.prompt));
     if (play.stem) root.appendChild(h("p", { class: "stem", text: play.stem }));
 
@@ -175,7 +174,7 @@
         var answerIsNee = UI.isNee(play.options[play.correct]);
         var nodes = [];
         if (play.reflection) {
-          UI.mark(list, correctId, "model");
+          UI.mark(list, correctId, "is-model");
           ctx.record(enc.conceptId, "engaged", "stage", { stage: enc.stage, choice: o.label });
           nodes.push(UI.headline("Consider.", "neutral"));
           nodes.push(h("p", { class: "model", text: L.answer }));
@@ -296,7 +295,7 @@
 
     function finish(selected, list) {
       selected.forEach(function (id) { UI.mark(list, id, "chosen"); });
-      correct.forEach(function (id) { UI.mark(list, id, reflection ? "model" : "right"); });
+      correct.forEach(function (id) { UI.mark(list, id, reflection ? "is-model" : "right"); });
       var result;
       if (reflection) result = "engaged";
       else if (play.mode === "single") result = correct.indexOf(selected[0]) !== -1 ? "correct" : "incorrect";
@@ -605,7 +604,7 @@
           var opts = sp.options.map(function (o, i) { return { id: String(i), label: o.label }; });
           var ms = multiSelect(UI.shuffle(opts, boss.id + s.label), [], function (selected, list) {
             selected.forEach(function (id) { UI.mark(list, id, "chosen"); });
-            sp.options.forEach(function (o, i) { if (o.strong) UI.mark(list, String(i), "model"); });
+            sp.options.forEach(function (o, i) { if (o.strong) UI.mark(list, String(i), "is-model"); });
             done(selected.map(function (id) { return sp.options[+id].label; }).join("; "));
           });
           w.appendChild(ms.list);
@@ -615,7 +614,7 @@
           var list = UI.choices(sp.options.map(function (o, i) { return { id: String(i), label: o }; }), function (o) {
             UI.lockChoices(list);
             UI.mark(list, o.id, "chosen");
-            UI.mark(list, String(sp.model), "model");
+            UI.mark(list, String(sp.model), "is-model");
             done(o.label);
           });
           w.appendChild(list);

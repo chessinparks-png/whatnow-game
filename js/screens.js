@@ -196,7 +196,7 @@
 
   // ---------------------------------------------------------------------------
   // MAP — a quiet constellation. Nodes cluster by hidden path.
-  var PATH_CENTERS = { see: [128, 138], power: [300, 142], lineage: [308, 318], self: [130, 318] };
+  var PATH_CENTERS = { see: [118, 128], power: [326, 126], lineage: [340, 326], self: [118, 330] };
 
   function layout(ids) {
     var byPath = {};
@@ -211,7 +211,7 @@
     Object.keys(all).forEach(function (path, pi) {
       var center = PATH_CENTERS[path] || [210 + 120 * Math.cos(pi), 230 + 120 * Math.sin(pi)];
       var group = all[path];
-      var r = group.length === 1 ? 0 : 58 + group.length * 4;
+      var r = group.length === 1 ? 0 : 46 + group.length * 6;
       group.forEach(function (id, i) {
         var a = (i / group.length) * Math.PI * 2 + pi * 0.9 + 0.4;
         pos[id] = [center[0] + r * Math.cos(a), center[1] + r * Math.sin(a)];

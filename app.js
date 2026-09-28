@@ -6,7 +6,7 @@
   var app = document.getElementById("app");
   var welcomeBack = false;
   var SLOT_LABELS = {
-    memory: "Memory", see: "See it", "new": "New", sharpen: "Sharpen",
+    memory: "Memory", see: "See it", "new": "New idea", sharpen: "Sharpen",
     practice: "Practice", thread: "Thread", boss: "What now?"
   };
 

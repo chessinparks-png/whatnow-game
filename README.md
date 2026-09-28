@@ -89,7 +89,7 @@ Correct answers always come from the pack. Adding a concept means adding its obj
 - The stage served rises with mastery: **recognize → recall → distinguish → apply → teach**. Early stages are multiple choice. Later stages are free recall and teach-back.
 - Passing a stage moves mastery to the next level. A miss drops it one level. Scenarios, practice, and threads add or remove fractions of a level. Using an idea in a boss case completes the last level.
 - Review intervals by mastery are 0 / 1 / 3 / 7 / 14 / 30 days. A *Guessing* correct answer halves the interval. A *Know it* correct answer stretches it. A confidently wrong answer comes back first. Repeated misses shorten future intervals.
-- **Clarity** = 85% average mastery across all ten concepts + 15% of threads discovered, shown as 0–100 (`Clarity.compute` in `js/engine.js`).
+- **Clarity** = 85% average mastery across all ten concepts + 15% of the threaded concept pairs discovered, shown as 0–100 (`Clarity.compute` in `js/engine.js`).
 
 ### Grading honesty
 
