@@ -1,0 +1,1142 @@
+// GENERATED from what_now_v1_vertical_slice.json by tools/embed-content.mjs.
+// Do not edit by hand — edit the JSON and re-run the script.
+window.WN_PACK = {
+  "pack": {
+    "id": "what_now_v1_vertical_slice",
+    "title": "WHAT NOW? — V1 Vertical Slice",
+    "version": "1.0",
+    "purpose": "Test the complete game loop with 10 concepts before scaling.",
+    "design_rule": "The player should feel like they are solving something, not studying something.",
+    "ui_rule": "One screen = one thought.",
+    "mastery_scale": {
+      "0": "new",
+      "1": "familiar",
+      "2": "recall",
+      "3": "explain",
+      "4": "connect",
+      "5": "use"
+    }
+  },
+  "sources": [
+    {
+      "id": "what_now",
+      "title": "What Now?: A Nation within a Nation",
+      "status": "source_argument",
+      "locator": "pp.1–3"
+    },
+    {
+      "id": "end_running",
+      "title": "The End of Running: A Theory of Black Liberation",
+      "status": "source_argument",
+      "locator": "pp.1–13"
+    },
+    {
+      "id": "white_like_me",
+      "title": "White Like Me: Reflections on Race From a Privileged Son",
+      "status": "source_argument",
+      "locator": "Introduction / Preface"
+    },
+    {
+      "id": "sn45_8",
+      "title": "SN 45.8 — An Analysis of the Path",
+      "status": "primary_source",
+      "locator": "Thanissaro Bhikkhu translation"
+    },
+    {
+      "id": "obstacle",
+      "title": "The Obstacle Is the Way",
+      "status": "source_argument",
+      "locator": "Introduction / Part I"
+    }
+  ],
+  "objects": [
+    {
+      "id": "concept_assimilation",
+      "title": "Assimilation",
+      "kind": "concept",
+      "path": "see",
+      "sourceIds": [
+        "what_now",
+        "white_like_me"
+      ],
+      "sourceStatus": "app_synthesis_grounded_in_sources",
+      "coreIdea": "Adaptation toward dominant norms or institutions, especially where acceptance or advancement is tied to that adaptation.",
+      "plainLanguage": "What do I have to become, suppress, or leave behind to belong?",
+      "connections": [
+        "concept_integration",
+        "concept_institutional_power",
+        "concept_collective_capacity",
+        "concept_representation"
+      ],
+      "commonMistakes": [
+        "Any participation in a white-majority institution proves assimilation.",
+        "Interracial relationships prove assimilation.",
+        "Code-switching alone proves assimilation."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "A Black employee joins a white-majority firm. Which fact, by itself, proves assimilation?",
+          "answer": "None of them.",
+          "explanation": "Workplace demographics alone do not establish assimilation.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "Define assimilation in one sentence.",
+          "answer": "Adaptation toward dominant norms or institutions, especially when acceptance or advancement is conditioned on that adaptation.",
+          "explanation": "The key issue is the terms of belonging.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Integration asks 'Can I enter?' Assimilation asks _____.",
+          "answer": "What must I become, suppress, or leave behind to belong?",
+          "explanation": "Integration is access; assimilation concerns the terms of belonging.",
+          "answerType": "exact"
+        },
+        "apply": {
+          "prompt": "A Black attorney works at a white-majority firm, mentors Black interns, funds a Black legal-aid nonprofit, and reports no pressure to distance herself from Black identity. Assimilation?",
+          "answer": "Not enough evidence.",
+          "explanation": "The workplace alone is not enough; the facts also show continued investment in Black institutions.",
+          "answerType": "evidence_based"
+        },
+        "teach": {
+          "prompt": "Explain why 'working around white people' and 'assimilation' are not synonyms.",
+          "answer": "Assimilation requires evidence about pressure toward dominant norms, identity, belonging, or redirected loyalty/resources; proximity alone does not establish it.",
+          "explanation": "Name the missing evidence.",
+          "answerType": "evidence_based"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "assimilation_s1",
+          "prompt": "A Black executive says leadership called her speech 'too urban,' so she changed it and stopped attending Black professional groups because colleagues saw them as 'divisive.' What do you see?",
+          "supported": [
+            "assimilation",
+            "institutional_norms"
+          ],
+          "bestEvidence": "Acceptance appears linked to suppressing Black-coded identity and affiliation.",
+          "answerType": "evidence_based"
+        },
+        {
+          "id": "assimilation_s2",
+          "prompt": "A Black engineer works for a mostly white company and lives in a mostly white neighborhood. Assimilation?",
+          "supported": [
+            "not_enough_evidence"
+          ],
+          "bestEvidence": "Demographics alone do not show required conformity, distancing, or abandonment.",
+          "answerType": "exact"
+        },
+        {
+          "id": "assimilation_s3",
+          "prompt": "A college rewards students for joining established organizations but gives no support to Black students creating their own institutions. Which question matters most?",
+          "supported": [
+            "who_sets_the_norm",
+            "institutional_power",
+            "assimilation_risk"
+          ],
+          "bestEvidence": "Existing structures are rewarded while independent institution-building is not.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_collective_capacity",
+          "type": "app_synthesis",
+          "prompt": "How can individual assimilation affect collective capacity?",
+          "possibleConnection": "If talent and resources flow outward without reciprocal investment, individual success may grow without increasing community-controlled capacity."
+        }
+      ]
+    },
+    {
+      "id": "concept_integration",
+      "title": "Integration",
+      "kind": "concept",
+      "path": "see",
+      "sourceIds": [
+        "what_now"
+      ],
+      "sourceStatus": "source_argument_plus_app_framework",
+      "coreIdea": "Access to institutions or spaces from which a group was previously excluded or restricted.",
+      "plainLanguage": "Can I enter?",
+      "connections": [
+        "concept_assimilation",
+        "concept_representation",
+        "concept_institutional_power"
+      ],
+      "commonMistakes": [
+        "Access automatically equals power.",
+        "Integration and assimilation are identical.",
+        "Integration automatically produces collective capacity."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "A school removes a rule that excluded Black students and admits them. Which concept is most directly demonstrated?",
+          "answer": "Integration.",
+          "explanation": "The immediate change is access.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "What question does integration ask in the app?",
+          "answer": "Can I enter?",
+          "explanation": "This separates access from later questions about power.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "A company hires more Black employees but keeps decision-making unchanged. What increased most clearly?",
+          "answer": "Integration.",
+          "explanation": "Access can increase while authority stays unchanged.",
+          "answerType": "exact"
+        },
+        "apply": {
+          "prompt": "A museum adds Black curators, gives them budget authority, and changes acquisition policy. Is this only integration?",
+          "answer": "No.",
+          "explanation": "Access occurred, but authority also indicates institutional power.",
+          "answerType": "evidence_based"
+        },
+        "teach": {
+          "prompt": "Explain integration without using 'diversity' or 'inclusion.'",
+          "answer": "Integration is gaining access to an institution or space that had excluded or restricted a group.",
+          "explanation": "Keep the answer focused on access.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "integration_s1",
+          "prompt": "A private club that once excluded Black members changes its rules and begins admitting them. What changed first?",
+          "supported": [
+            "integration"
+          ],
+          "bestEvidence": "Access rules changed.",
+          "answerType": "exact"
+        },
+        {
+          "id": "integration_s2",
+          "prompt": "A university doubles Black enrollment but trustees and senior leadership remain almost unchanged. Which two concepts should be separated?",
+          "supported": [
+            "integration",
+            "institutional_power"
+          ],
+          "bestEvidence": "Enrollment shows access; governance shows power.",
+          "answerType": "evidence_based"
+        },
+        {
+          "id": "integration_s3",
+          "prompt": "A Black-owned institution partners with a white-led institution while keeping its own board, budget, and mission. Is cooperation itself assimilation?",
+          "supported": [
+            "not_enough_evidence"
+          ],
+          "bestEvidence": "The Black institution retains governance and mission.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_institutional_power",
+          "type": "app_synthesis",
+          "prompt": "Why can integration occur without institutional power?",
+          "possibleConnection": "A group can gain entry without gaining control over rules, budgets, leadership, or assets."
+        }
+      ]
+    },
+    {
+      "id": "concept_representation",
+      "title": "Representation",
+      "kind": "concept",
+      "path": "see",
+      "sourceIds": [
+        "what_now",
+        "white_like_me"
+      ],
+      "sourceStatus": "app_synthesis_grounded_in_sources",
+      "coreIdea": "Presence or visibility inside a group, institution, or public image.",
+      "plainLanguage": "Who is visible?",
+      "connections": [
+        "concept_integration",
+        "concept_institutional_power",
+        "concept_collective_capacity"
+      ],
+      "commonMistakes": [
+        "Visible representation proves ownership.",
+        "One person's success proves institutional transformation.",
+        "Representation is meaningless."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "A board adds three Black members. Which concept can you establish immediately?",
+          "answer": "Representation.",
+          "explanation": "Presence is established; actual authority still needs evidence.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "What question does representation ask?",
+          "answer": "Who is visible?",
+          "explanation": "Representation tracks presence, not necessarily control.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Representation asks 'Who is visible?' Institutional power asks _____.",
+          "answer": "Who decides?",
+          "explanation": "Visibility and authority are not identical.",
+          "answerType": "exact"
+        },
+        "apply": {
+          "prompt": "A Black spokesperson fronts a campaign but cannot approve messaging, spending, or strategy. Representation or institutional power?",
+          "answer": "Representation.",
+          "explanation": "The person is visible but lacks decision authority.",
+          "answerType": "exact"
+        },
+        "teach": {
+          "prompt": "Explain why representation can matter without being sufficient.",
+          "answer": "Presence can matter for access and symbolism but does not automatically transfer ownership or decision-making power.",
+          "explanation": "Avoid treating representation as either everything or nothing.",
+          "answerType": "evidence_based"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "representation_s1",
+          "prompt": "A company's website prominently features Black executives, but none sit on the committee controlling acquisitions. What do you see?",
+          "supported": [
+            "representation",
+            "institutional_power_gap"
+          ],
+          "bestEvidence": "Visibility exists, but a key decision body excludes them.",
+          "answerType": "evidence_based"
+        },
+        {
+          "id": "representation_s2",
+          "prompt": "A Black-owned cooperative elects a mostly Black worker-board. Which concepts are supported?",
+          "supported": [
+            "representation",
+            "ownership",
+            "institutional_power"
+          ],
+          "bestEvidence": "Presence, ownership, and authority are all described.",
+          "answerType": "evidence_based"
+        },
+        {
+          "id": "representation_s3",
+          "prompt": "One Black student becomes student-body president at a school where Black students report discriminatory discipline. Does the election settle the institutional question?",
+          "supported": [
+            "representation"
+          ],
+          "bestEvidence": "One officeholder does not establish broader institutional change.",
+          "answerType": "exact"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_collective_capacity",
+          "type": "app_synthesis",
+          "prompt": "When does representation begin to become collective capacity?",
+          "possibleConnection": "When presence is paired with durable authority, resources, networks, ownership, or institutions that outlast one individual."
+        }
+      ]
+    },
+    {
+      "id": "concept_institutional_power",
+      "title": "Institutional Power",
+      "kind": "concept",
+      "path": "see",
+      "sourceIds": [
+        "what_now",
+        "end_running"
+      ],
+      "sourceStatus": "app_synthesis_grounded_in_sources",
+      "coreIdea": "The ability to make consequential decisions about rules, resources, leadership, policy, or assets.",
+      "plainLanguage": "Who decides?",
+      "connections": [
+        "concept_representation",
+        "concept_integration",
+        "concept_collective_capacity",
+        "concept_organizing"
+      ],
+      "commonMistakes": [
+        "Job title always equals real authority.",
+        "Consultation equals decision power.",
+        "Budget authority is unimportant."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "Which is clearest evidence of institutional power: appearing in an ad, attending a meeting, controlling a budget, or being praised?",
+          "answer": "Controlling a budget.",
+          "explanation": "Resource control is direct evidence of authority.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "What question does institutional power ask?",
+          "answer": "Who decides?",
+          "explanation": "One of the app's anchor questions.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "A committee can advise the CEO but cannot approve policy or spending. Institutional power?",
+          "answer": "Limited at best.",
+          "explanation": "Advisory access is not binding authority.",
+          "answerType": "evidence_based"
+        },
+        "apply": {
+          "prompt": "A community board can veto development projects, allocate grants, and appoint two agency directors. What is strongly supported?",
+          "answer": "Institutional power.",
+          "explanation": "The board has binding authority.",
+          "answerType": "exact"
+        },
+        "teach": {
+          "prompt": "Explain institutional power to someone who says, 'But there are Black people in the room.'",
+          "answer": "Presence tells us who is in the room; power asks who can make binding decisions about rules, money, leadership, and assets.",
+          "explanation": "Distinguish presence from authority.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "power_s1",
+          "prompt": "A nonprofit creates a Black community advisory panel but the executive director may ignore every recommendation. What does the panel have?",
+          "supported": [
+            "voice",
+            "representation"
+          ],
+          "bestEvidence": "Its recommendations are nonbinding.",
+          "answerType": "exact"
+        },
+        {
+          "id": "power_s2",
+          "prompt": "Workers elect the board and vote on major company policy. What changed?",
+          "supported": [
+            "institutional_power",
+            "democratic_governance"
+          ],
+          "bestEvidence": "Workers have formal decision rights.",
+          "answerType": "exact"
+        },
+        {
+          "id": "power_s3",
+          "prompt": "A celebrated Black dean controls hiring but not budget, curriculum, admissions, or tenure rules. Does the title alone establish broad institutional power?",
+          "supported": [
+            "partial_power"
+          ],
+          "bestEvidence": "Authority is real but bounded.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_organizing",
+          "type": "app_synthesis",
+          "prompt": "How can organizing change institutional power?",
+          "possibleConnection": "Organizing can convert dispersed individuals into a coordinated bloc capable of negotiating, voting, striking, governing, or building institutions."
+        }
+      ]
+    },
+    {
+      "id": "concept_collective_capacity",
+      "title": "Collective Capacity",
+      "kind": "concept",
+      "path": "power",
+      "sourceIds": [
+        "what_now",
+        "end_running"
+      ],
+      "sourceStatus": "app_synthesis_grounded_in_sources",
+      "coreIdea": "A group's durable ability to shape conditions through institutions, resources, knowledge, organization, and coordinated action.",
+      "plainLanguage": "What can we do together that we could not do separately?",
+      "connections": [
+        "concept_organizing",
+        "concept_mutual_aid",
+        "concept_institutional_power",
+        "concept_assimilation"
+      ],
+      "commonMistakes": [
+        "One person's prestige equals durable group capacity.",
+        "Money alone creates capacity.",
+        "Collective capacity requires total separation from others."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "Which best demonstrates collective capacity: one millionaire, a durable community legal fund, a viral speech, or a celebrity endorsement?",
+          "answer": "A durable community legal fund.",
+          "explanation": "It creates an ongoing resource for collective use.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "Define collective capacity in plain language.",
+          "answer": "A group's durable ability to act together and shape its own conditions.",
+          "explanation": "Durability and coordinated ability are central.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Individual advancement asks 'How far did one person rise?' Collective capacity asks _____.",
+          "answer": "What durable ability did the group gain?",
+          "explanation": "This keeps individual success distinct from collective transformation.",
+          "answerType": "exact"
+        },
+        "apply": {
+          "prompt": "A founder endows a permanent Black-owned training institute with its own board and property. What did this add beyond individual advancement?",
+          "answer": "Collective capacity.",
+          "explanation": "Personal success became a durable institution and resource.",
+          "answerType": "exact"
+        },
+        "teach": {
+          "prompt": "Explain why collective capacity is not identical to racial solidarity.",
+          "answer": "Solidarity is a commitment or relationship; capacity is the durable ability to coordinate resources, institutions, knowledge, and action.",
+          "explanation": "Capacity is about what can actually be done.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "capacity_s1",
+          "prompt": "A neighborhood raises emergency money once after a fire. Is that collective capacity?",
+          "supported": [
+            "possible_early_capacity"
+          ],
+          "bestEvidence": "Coordination occurred, but durability is unclear.",
+          "answerType": "evidence_based"
+        },
+        {
+          "id": "capacity_s2",
+          "prompt": "Residents create a permanent fund, membership system, legal committee, and community-owned meeting space. What increased?",
+          "supported": [
+            "collective_capacity",
+            "institution_building"
+          ],
+          "bestEvidence": "The group has durable resources and organization.",
+          "answerType": "exact"
+        },
+        {
+          "id": "capacity_s3",
+          "prompt": "A famous Black athlete becomes extremely wealthy but has no described relationship to Black institutions. What can you conclude about collective capacity?",
+          "supported": [
+            "not_enough_evidence"
+          ],
+          "bestEvidence": "Individual wealth alone does not establish durable group capacity.",
+          "answerType": "exact"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_mutual_aid",
+          "type": "historical_connection",
+          "prompt": "How can mutual aid become collective capacity?",
+          "possibleConnection": "Repeated resource-sharing can develop durable funds, networks, norms, and institutions."
+        }
+      ]
+    },
+    {
+      "id": "concept_organizing",
+      "title": "Organizing",
+      "kind": "concept",
+      "path": "power",
+      "sourceIds": [
+        "end_running"
+      ],
+      "sourceStatus": "source_argument_plus_app_framework",
+      "coreIdea": "Turning separate people into coordinated actors with a shared structure, goal, and capacity for sustained action.",
+      "plainLanguage": "How do individuals become a force?",
+      "connections": [
+        "concept_collective_capacity",
+        "concept_mutual_aid",
+        "concept_institutional_power"
+      ],
+      "commonMistakes": [
+        "A rally automatically equals durable organizing.",
+        "A social-media audience is automatically an organization.",
+        "Structure and roles do not matter."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "Which is strongest evidence of organizing: 50,000 views, a one-day rally, a membership group with roles and recurring meetings, or a slogan?",
+          "answer": "A membership group with roles and recurring meetings.",
+          "explanation": "Organizing creates durable coordination.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "Finish the app definition: Organizing turns separate people into _____.",
+          "answer": "Coordinated actors.",
+          "explanation": "That is the key transformation.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Mobilizing vs organizing?",
+          "answer": "Mobilizing can gather people for an event; organizing builds durable relationships and structure for repeated action.",
+          "explanation": "Continuity and structure are the key difference.",
+          "answerType": "evidence_based"
+        },
+        "apply": {
+          "prompt": "A group holds a successful march, then creates no membership list, leadership structure, follow-up process, or next action. What is missing?",
+          "answer": "Durable organizing structure.",
+          "explanation": "The event mobilized people but did not clearly build sustained organization.",
+          "answerType": "exact"
+        },
+        "teach": {
+          "prompt": "Explain why organizing can create power without anyone becoming famous.",
+          "answer": "Power can come from coordinated numbers, resources, skills, votes, labor, information, or institutions rather than celebrity.",
+          "explanation": "Focus on coordination.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "organizing_s1",
+          "prompt": "Three thousand workers join a structured association, agree on demands, and withhold labor together. What is central?",
+          "supported": [
+            "organizing",
+            "collective_capacity"
+          ],
+          "bestEvidence": "They coordinate membership, demands, and collective action.",
+          "answerType": "exact"
+        },
+        {
+          "id": "organizing_s2",
+          "prompt": "A hashtag trends for two days. Does that establish organizing?",
+          "supported": [
+            "not_enough_evidence"
+          ],
+          "bestEvidence": "Attention alone does not show durable structure.",
+          "answerType": "exact"
+        },
+        {
+          "id": "organizing_s3",
+          "prompt": "A church, neighborhood group, fraternity, and tenant association adopt the same local agenda but keep separate identities. What appears?",
+          "supported": [
+            "organizing",
+            "coalition_like_coordination"
+          ],
+          "bestEvidence": "Different institutions coordinate around a common agenda.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_institutional_power",
+          "type": "app_synthesis",
+          "prompt": "Why organize if the goal is institutional power?",
+          "possibleConnection": "Coordination can create leverage to win formal authority, resources, ownership, or policy change."
+        }
+      ]
+    },
+    {
+      "id": "concept_mutual_aid",
+      "title": "Mutual Aid",
+      "kind": "concept",
+      "path": "lineage",
+      "sourceIds": [
+        "end_running"
+      ],
+      "sourceStatus": "source_history_plus_app_framework",
+      "coreIdea": "Organized reciprocal support in which people pool resources, labor, knowledge, or care to meet shared needs.",
+      "plainLanguage": "We help keep one another standing.",
+      "connections": [
+        "concept_collective_capacity",
+        "concept_organizing",
+        "concept_institutional_power"
+      ],
+      "commonMistakes": [
+        "One-way charity is automatically mutual aid.",
+        "Reciprocity does not matter.",
+        "Mutual aid cannot become formal institutions."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "Neighbors contribute monthly to a shared emergency fund that any contributing household can access under agreed rules. Which concept fits best?",
+          "answer": "Mutual aid.",
+          "explanation": "Resources are pooled for reciprocal support.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "What historic organization in the source is used as an example of Black mutual aid in Philadelphia?",
+          "answer": "The Free African Society.",
+          "explanation": "The source describes fellowship, worship, financial support, and assistance to newly freed Black people.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Mutual aid vs charity: simplest distinction?",
+          "answer": "Mutual aid emphasizes reciprocal, shared support among participants; charity is often one-directional giver-to-recipient aid.",
+          "explanation": "Real examples can blur the line.",
+          "answerType": "evidence_based"
+        },
+        "apply": {
+          "prompt": "A wealthy donor pays everyone's rent one month with no shared structure or reciprocal participation. Mutual aid?",
+          "answer": "Not necessarily; it is more clearly one-way aid.",
+          "explanation": "The facts do not show reciprocal organization.",
+          "answerType": "evidence_based"
+        },
+        "teach": {
+          "prompt": "Explain how mutual aid can become institution-building.",
+          "answer": "Repeated reciprocal support can produce durable funds, roles, rules, networks, and organizations.",
+          "explanation": "The key transition is from repeated cooperation to durable structure.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "mutual_s1",
+          "prompt": "A group creates a rotating fund for groceries, transportation, and emergency bills. Members contribute when able and receive help when needed. What is this?",
+          "supported": [
+            "mutual_aid"
+          ],
+          "bestEvidence": "Shared contributions support shared needs.",
+          "answerType": "exact"
+        },
+        {
+          "id": "mutual_s2",
+          "prompt": "A corporation donates meals once for publicity. Is that mutual aid?",
+          "supported": [
+            "charity_or_donation"
+          ],
+          "bestEvidence": "The relationship is one-directional and not reciprocal.",
+          "answerType": "exact"
+        },
+        {
+          "id": "mutual_s3",
+          "prompt": "A mutual-aid fund grows into a member-owned credit union. Which new concept has clearly appeared?",
+          "supported": [
+            "institution_building",
+            "collective_capacity"
+          ],
+          "bestEvidence": "Informal support becomes a durable member-controlled institution.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_collective_capacity",
+          "type": "historical_connection",
+          "prompt": "What can mutual aid build besides immediate relief?",
+          "possibleConnection": "Trust, networks, funds, leadership practice, and institutions."
+        }
+      ]
+    },
+    {
+      "id": "concept_right_view",
+      "title": "Right View",
+      "kind": "concept",
+      "path": "self",
+      "sourceIds": [
+        "sn45_8"
+      ],
+      "sourceStatus": "primary_source_plus_app_application",
+      "coreIdea": "In SN 45.8, Right View is knowledge regarding stress, its origination, its stopping, and the path leading to its stopping.",
+      "plainLanguage": "See the problem and its causes clearly before deciding what to do.",
+      "connections": [
+        "concept_perception",
+        "concept_right_speech",
+        "concept_institutional_power"
+      ],
+      "commonMistakes": [
+        "Right View means having the approved opinion.",
+        "Right View is generic positive thinking.",
+        "Modern app applications are literal translations of the sutta."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "Which factor concerns knowledge of stress, its origin, its cessation, and the path?",
+          "answer": "Right View.",
+          "explanation": "That is the SN 45.8 definition.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "Name the four things Right View knows in SN 45.8.",
+          "answer": "Stress, the origination of stress, the stopping of stress, and the path leading to its stopping.",
+          "explanation": "This should become free recall.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Right View or positive thinking? 'This hurts; here is what feeds it; here is what may reduce it.'",
+          "answer": "Right View is the closer fit.",
+          "explanation": "It investigates problem, cause, cessation, and path.",
+          "answerType": "exact"
+        },
+        "apply": {
+          "prompt": "During conflict, you notice anger and instantly decide the other person is evil. What would the app's Right View practice ask first?",
+          "answer": "Separate what is happening from the story you are adding, then examine causes and conditions.",
+          "explanation": "This is an app application inspired by the source.",
+          "answerType": "reflection"
+        },
+        "teach": {
+          "prompt": "Explain Right View without Buddhist jargon.",
+          "answer": "Understand the problem, what is causing it, whether it can cease, and the path leading away from it.",
+          "explanation": "A plain-language rendering of the source definition.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "rightview_s1",
+          "prompt": "You feel resentment after being ignored. What is the first useful move?",
+          "supported": [
+            "notice_condition",
+            "investigate_cause"
+          ],
+          "bestEvidence": "Understand conditions before acting.",
+          "answerType": "reflection"
+        },
+        {
+          "id": "rightview_s2",
+          "prompt": "A workplace problem has both an unfair rule and your own fear of speaking. Which answer best fits the app?",
+          "supported": [
+            "multiple_levels",
+            "clear_seeing"
+          ],
+          "bestEvidence": "External structure and internal response can both be real.",
+          "answerType": "evidence_based"
+        },
+        {
+          "id": "rightview_s3",
+          "prompt": "You are certain you know someone's motive but have no evidence. What practice is missing?",
+          "supported": [
+            "clear_seeing",
+            "uncertainty"
+          ],
+          "bestEvidence": "Do not confuse inference with fact.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_perception",
+          "type": "app_synthesis",
+          "prompt": "What do Right View and Stoic perception share—and where do they differ?",
+          "possibleConnection": "Both value clear seeing before action. Right View belongs to a Buddhist path centered on stress and cessation; Holiday's perception discipline centers on judging obstacles clearly and usefully."
+        }
+      ]
+    },
+    {
+      "id": "concept_right_speech",
+      "title": "Right Speech",
+      "kind": "concept",
+      "path": "self",
+      "sourceIds": [
+        "sn45_8"
+      ],
+      "sourceStatus": "primary_source_plus_app_application",
+      "coreIdea": "SN 45.8 defines Right Speech as abstaining from lying, divisive speech, abusive speech, and idle chatter.",
+      "plainLanguage": "Before speaking: Is it true, needlessly divisive or abusive, and worth feeding?",
+      "connections": [
+        "concept_right_view",
+        "concept_organizing",
+        "concept_perception"
+      ],
+      "commonMistakes": [
+        "Right Speech means merely being polite.",
+        "Truthful speech can never be harsh.",
+        "Silence is always Right Speech."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "Which four speech restraints appear in SN 45.8?",
+          "answer": "Lying, divisive speech, abusive speech, and idle chatter.",
+          "explanation": "These are the categories named in the text.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "Name the four forms of speech SN 45.8 says to abstain from.",
+          "answer": "Lying, divisive speech, abusive speech, and idle chatter.",
+          "explanation": "Recall without choices.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "Someone calmly tells an uncomfortable truth. Does 'uncomfortable' automatically make it Wrong Speech?",
+          "answer": "No.",
+          "explanation": "Right Speech is not defined as keeping everyone comfortable.",
+          "answerType": "evidence_based"
+        },
+        "apply": {
+          "prompt": "You want to post a true private detail solely to humiliate someone. Which concern is most obvious?",
+          "answer": "Abusive/harmful use of speech.",
+          "explanation": "Truthfulness alone does not settle whether the speech is skillful.",
+          "answerType": "evidence_based"
+        },
+        "teach": {
+          "prompt": "Why is Right Speech more demanding than 'don't lie'?",
+          "answer": "It also asks you to abstain from divisive, abusive, and idle speech.",
+          "explanation": "Truth is only one dimension.",
+          "answerType": "exact"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "speech_s1",
+          "prompt": "You repeat a rumor you are not sure is true because it helps your side in an argument. What is the clearest problem?",
+          "supported": [
+            "truthfulness_problem"
+          ],
+          "bestEvidence": "Uncertain information is being used as if reliable.",
+          "answerType": "exact"
+        },
+        {
+          "id": "speech_s2",
+          "prompt": "You criticize an institution with evidence, without insults, and with a clear purpose. Does Right Speech require silence?",
+          "supported": [
+            "truthful_purposeful_speech_possible"
+          ],
+          "bestEvidence": "The source does not define Right Speech as avoiding criticism.",
+          "answerType": "exact"
+        },
+        {
+          "id": "speech_s3",
+          "prompt": "A group meeting becomes a contest in humiliating opponents rather than solving the problem. Which practice has broken down?",
+          "supported": [
+            "right_speech_concern",
+            "organizing_quality"
+          ],
+          "bestEvidence": "Speech is becoming abusive and divisive.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_organizing",
+          "type": "app_synthesis",
+          "prompt": "Why might Right Speech matter to organizing?",
+          "possibleConnection": "Groups need truthful information, disagreement without needless destruction, and speech that supports durable relationships."
+        }
+      ]
+    },
+    {
+      "id": "concept_perception",
+      "title": "Perception",
+      "kind": "concept",
+      "path": "self",
+      "sourceIds": [
+        "obstacle"
+      ],
+      "sourceStatus": "source_argument_plus_app_application",
+      "coreIdea": "Holiday frames perception as how we see and understand what happens and what meaning we assign it; it is the first of Perception, Action, and Will.",
+      "plainLanguage": "What happened—and what story am I adding?",
+      "connections": [
+        "concept_right_view",
+        "concept_institutional_power",
+        "concept_collective_capacity"
+      ],
+      "commonMistakes": [
+        "A real structural problem is merely a mindset problem.",
+        "Reframing means denying harm.",
+        "Emotional regulation means passivity."
+      ],
+      "levels": {
+        "recognize": {
+          "prompt": "In Holiday's framework, what comes before Action and Will?",
+          "answer": "Perception.",
+          "explanation": "The method is Perception, Action, Will.",
+          "answerType": "exact"
+        },
+        "recall": {
+          "prompt": "State the three disciplines in order.",
+          "answer": "Perception, Action, Will.",
+          "explanation": "This should become automatic.",
+          "answerType": "exact"
+        },
+        "distinguish": {
+          "prompt": "An unfair rule exists. 'The rule is unfair' is a claim about the condition; 'I am doomed forever' is what?",
+          "answer": "An interpretation/story.",
+          "explanation": "The app separates conditions from added predictions.",
+          "answerType": "exact"
+        },
+        "apply": {
+          "prompt": "You receive a rejection. FACT = 'The application was rejected.' STORY = 'Nobody will ever hire me.' ACTION = ?",
+          "answer": "Possible answers: seek feedback, revise, identify another opening, choose a next step.",
+          "explanation": "Keep fact, interpretation, and action distinct.",
+          "answerType": "reflection"
+        },
+        "teach": {
+          "prompt": "Why should perception practice not erase structural analysis?",
+          "answer": "Clear perception distinguishes facts, interpretations, and controllable responses; it does not make external rules, institutions, or harms imaginary.",
+          "explanation": "Pair self-mastery with level-of-analysis questions.",
+          "answerType": "evidence_based"
+        }
+      },
+      "scenarios": [
+        {
+          "id": "perception_s1",
+          "prompt": "Your proposal is rejected. Which is pure fact? A) They hate me. B) The proposal was rejected. C) I'll never succeed.",
+          "supported": [
+            "B"
+          ],
+          "bestEvidence": "Only B states the observable event without motive or prediction.",
+          "answerType": "exact"
+        },
+        {
+          "id": "perception_s2",
+          "prompt": "A policy explicitly excludes your group. Should the app answer, 'It's only your perception'?",
+          "supported": [
+            "no",
+            "structural_fact_can_be_real"
+          ],
+          "bestEvidence": "Perception practice does not erase documented external conditions.",
+          "answerType": "exact"
+        },
+        {
+          "id": "perception_s3",
+          "prompt": "After an insult, you notice your body tense, separate the words from assumptions about motive, and decide whether a response will help. Which practices overlap?",
+          "supported": [
+            "perception",
+            "right_view",
+            "right_speech"
+          ],
+          "bestEvidence": "Clear seeing and deliberate speech overlap here.",
+          "answerType": "evidence_based"
+        }
+      ],
+      "threadConnections": [
+        {
+          "to": "concept_institutional_power",
+          "type": "app_synthesis",
+          "prompt": "How can clear perception improve structural analysis?",
+          "possibleConnection": "Separate observable rules, authority, and resource flows from assumptions about motives."
+        }
+      ]
+    }
+  ],
+  "bossCases": [
+    {
+      "id": "boss_talent",
+      "title": "TALENT",
+      "intro": "There may not be one correct answer.",
+      "scenario": "A Black engineer joins a prestigious technology company. Ten years later she has wealth and influence, mentors Black employees, but has little involvement with Black-controlled institutions. The company has diverse public leadership, while ownership and capital allocation remain concentrated elsewhere.",
+      "steps": [
+        {
+          "label": "SEE",
+          "prompt": "Which concepts are supported, possible, or unsupported?",
+          "expected": [
+            "integration: supported",
+            "representation: supported",
+            "individual advancement: supported",
+            "assimilation: possible but not established",
+            "institutional power: requires more evidence",
+            "collective capacity: requires more evidence"
+          ]
+        },
+        {
+          "label": "EVIDENCE",
+          "prompt": "What would you need to know before calling this assimilation?",
+          "expected": [
+            "pressure to conform",
+            "terms of belonging",
+            "distancing from Black identity or institutions",
+            "where skills/resources flow"
+          ]
+        },
+        {
+          "label": "POWER",
+          "prompt": "What would show institutional power rather than visibility?",
+          "expected": [
+            "binding authority over budget, rules, hiring, strategy, ownership, or capital"
+          ]
+        },
+        {
+          "label": "SELF",
+          "prompt": "Which internal motives might be relevant without assuming them?",
+          "expected": [
+            "approval, ambition, fear, duty, security, service; motives are not facts without evidence"
+          ]
+        },
+        {
+          "label": "WHAT NOW?",
+          "prompt": "Name one way individual advancement could become durable collective capacity, and one tradeoff.",
+          "expected": "Open response; reward specificity, tradeoff awareness, and evidence rather than ideology."
+        }
+      ],
+      "answerType": "reflection"
+    },
+    {
+      "id": "boss_meeting",
+      "title": "THE MEETING",
+      "intro": "There may not be one correct answer.",
+      "scenario": "Residents learn that a redevelopment plan will reshape their neighborhood. Officials invite them to a listening session, but final budget and contracts are controlled elsewhere. The meeting becomes angry and personal. A smaller group proposes a permanent resident organization and shared legal fund.",
+      "steps": [
+        {
+          "label": "SEE",
+          "prompt": "Representation vs institutional power?",
+          "expected": [
+            "Residents are present and heard, but final budget/contracts remain controlled elsewhere."
+          ]
+        },
+        {
+          "label": "LINEAGE",
+          "prompt": "Which concept best describes the proposed shared legal fund?",
+          "expected": [
+            "mutual aid, potentially becoming collective capacity"
+          ]
+        },
+        {
+          "label": "POWER",
+          "prompt": "Why might a permanent resident organization matter?",
+          "expected": [
+            "organizing creates durable coordination beyond one meeting"
+          ]
+        },
+        {
+          "label": "SELF",
+          "prompt": "Which practice matters once speech becomes humiliation?",
+          "expected": [
+            "Right Speech"
+          ]
+        },
+        {
+          "label": "PERCEPTION",
+          "prompt": "Separate one fact from one unsupported story.",
+          "expected": [
+            "Fact: authority is located elsewhere. Story: any unverified claim about motives."
+          ]
+        },
+        {
+          "label": "WHAT NOW?",
+          "prompt": "Propose one next move that increases resident capacity without pretending the imbalance is only a mindset problem.",
+          "expected": "Open response; reward structural precision, practical action, and tradeoff awareness."
+        }
+      ],
+      "answerType": "reflection"
+    }
+  ],
+  "sessionRecipe": {
+    "normalRun": [
+      "1 spaced-repetition object",
+      "1 SEE IT scenario",
+      "1 new object",
+      "1 self-practice object",
+      "1 THREAD connection"
+    ],
+    "bossFrequency": "Replace final THREAD with WHAT NOW? approximately every third session.",
+    "selectionRules": [
+      "Never show more than one new core concept in a 7-minute run.",
+      "Prefer weak mastery items over random repetition.",
+      "Move mastered items from recognition to recall, distinction, application, and teach-back.",
+      "Use NOT ENOUGH EVIDENCE whenever the prompt does not support a stronger conclusion.",
+      "Never score political agreement; score source recall, distinctions, evidence, uncertainty, and reasoning."
+    ]
+  },
+  "scoring": {
+    "exact": {
+      "correct": 1,
+      "incorrect": 0
+    },
+    "evidence_based": {
+      "dimensions": [
+        "concept fit",
+        "evidence cited",
+        "missing information recognized",
+        "overclaim avoidance"
+      ],
+      "scoreRange": "0-4"
+    },
+    "reflection": {
+      "score": "unscored",
+      "record": [
+        "response",
+        "concepts invoked",
+        "optional confidence"
+      ],
+      "rule": "Never grade ideology or personal values."
+    }
+  },
+  "uiCopy": {
+    "correct": "Clear.",
+    "incorrect": "Not quite.",
+    "uncertain": "Not enough evidence.",
+    "continue": "Continue",
+    "finish": "Done.",
+    "boss": "WHAT NOW?",
+    "returning": "Welcome back."
+  }
+};
